@@ -1,0 +1,636 @@
+html{
+    box-sizing: border-box;
+    /* Conversion de pixeles a REM en un valor estandar */
+    font-size: 62.5% /*Reset para REMS -62.5% = 10px de 16px */
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+/* Atributos que tomaran todo lo que sea parte del body */
+body{
+    /* Fuente de GoogleApi */
+    font-family: 'Lato', sans-serif;
+    /* Tamaño de fuente de 16px */
+    font-size: 1.6rem;
+    /* Interlineado de dos renglones */
+    line-height: 2;
+}
+
+/* Globales */
+img{
+    max-width: 100%;
+}
+/* Contenedor (logo, nav, h1) */
+.contenedor {
+    /* Anchura del contenedor maxima de 1200px */
+    max-width: 120rem;
+    /* Margen izquierdo auto */
+    margin-left: auto;
+    /* Margen derecho auto */
+    margin-right: auto;
+}
+
+h1{
+    /* Tamaño de fuente para todas las h1 de 38px */
+    font-size: 3.8rem;    
+}
+
+h2{
+    /* Tamaño de fuente para todas las h1 de 34px */
+    font-size: 3.4rem;
+}
+
+h3{
+    /* Tamaño de fuente para todas las h1 de 30px */
+    font-size: 3rem;
+}
+
+h4{
+    /* Tamaño de fuente para todas las h1 de 26px */
+    font-size: 2.6rem;
+}
+
+/* Utilidades */
+seccion{
+    /* Margen arriba 20px */
+    margin-top: 2rem;
+    /* Margen abajo 20px */
+    margin-bottom: 2rem;
+}
+
+/* Estructura de fuente */
+.fw-300{
+    /* Tipo de fuente cargada de GoogleApi 300 */
+    font-weight: 300;
+}
+
+/* Centra textos */
+.centrar-texto{
+    /* Ajusta el texto al centro */
+    text-align: center;
+}
+
+/* Display Block */
+.d-block{
+    /* Display para botones y destaca su importancia e ignora el display de los demas */
+    display: block!important;
+}
+
+/* Contenido centrado */
+.contenido-centrado{
+    /* Ancho maximo del texto 800px*/
+    max-width: 80rem;
+}
+
+/* Botones */
+.boton{
+    /* Color blanco */
+    color: #ffffff;
+    /* Forma de fuente 700 */
+    font-weight: 700;
+    /* Tamaño de fuente 18px*/
+    font-size: 1.8rem;
+    /* Sin decoración del texto */
+    text-decoration: none;
+    /* Padding de 10px arriba y abajo 30px izquierda y derecha */
+    padding: 1rem 3rem;
+    /* Margen del boton 30px */
+    margin-top: 3rem;
+    /* Display que tomara el valor inline-block: Por defecto es inline para enlaces */
+    display: inline-block;
+    /* Ajusta el texto en el centro */
+    text-align: center;
+    /* Sin borde */
+    border: none;
+}
+
+/* Sobre el boton */
+.boton:hover{
+    /* El cursor se nota al estar en botones */
+    cursor: pointer;
+}
+
+/* Boton amarillo */
+.boton-amarillo{
+    /* Color de background amarillo-naranja */
+    background-color: #E08709;
+    /* Transforma el texto a mayusculas */
+    text-transform: uppercase;
+}
+
+/* Boton verde */
+.boton-verde{
+    /* Color de background verde */
+    background-color: #71B100;
+    /* Tranforma el texto a mayusculas */
+    text-transform: uppercase;
+    /* Margen hacia abajo de 20px */
+    margin-bottom: 2rem;
+}
+
+/* Header */
+.site-header{
+    /* Color de fondo */
+    background-color: #333333;
+    /* Padding */
+    padding: 1rem 0 3rem 0;
+}
+
+/* Header inicio (Imágen)*/
+.site-header.inicio {
+    /* Imágen de fondo */
+    background-image: url(../Imagenes/header.jpg);
+    /* Muestra la imagen desde el centro */
+    background-position: center center;
+    /* Forza a que la imágen tome el espacio disponible como altura y anchura respetando las proporciones definidas */
+    background-size: cover;
+    /* Viewport height: Toma la proporción de la pantalla */
+    height: 100vh;
+    /* Toma un valor minimo si este se minimiza en algunas pantallas */
+    min-height: 60rem;
+}
+
+/* Contenido que viene dentro del header */
+.contenido-header{
+    height: 100%;
+    /* Flexbox solo afecta al primer nivel de las etiquetas hijas (div, h1) */
+    display: flex;
+    /* Posiciona los contenedores en columna */
+    flex-direction: column;
+    /* Deja un espacio intermedio entre dos elementos uno para la izquierda y el otro a la derecha. Alinea verticalmente */
+    justify-content: space-between;
+}
+
+/* Contenido que viene dentro del header  con h1 */
+.contenido-header h1{
+    /* Color de fuente blanco */
+    color: #ffffff;
+    /* Espacio dentro de la barra hacia abajo */
+    padding-bottom: 2rem;
+    /* Anchura maxima de 600px */
+    max-width: 60rem;
+    /* Interlineado de dos renglones */
+    line-height: 2;
+}
+
+/* Barra (logo, nav) */
+.barra{
+    /* Flexbox solo afecta al primer nivel de las etiquetas hijas (a, nav) */
+    display: flex;
+    /* Deja un espacio intermedio entre dos elementos uno para la izquierda y el otro a la derecha. Alinea horizontalmente */
+    justify-content: space-between;
+    /* Alinea verticalmente */
+    align-items: center;
+    /* Espacio de la barra hacia arriba */
+    padding-top: 3rem;
+}
+
+/* Navegación con los a */
+.navegacion a{
+    /* Color blanco */
+    color: #ffffff;
+    /* Sin decoración */
+    text-decoration: none;
+    /* Tamaño de la fuente */
+    font-size: 2rem;
+    /* Separación entre cada elemento de la barra de nav */
+    margin-right: 2rem;
+}
+
+/* Pseudoselector */
+/* La barra nav tomara un pseudoselector al ultimo elemento */
+.navegacion a:last-of-type{
+    /* Margen 0 para no desproporcionar el tamaño de separación de la barra de nav */
+    margin: 0;    
+}
+
+/* Iconos nosotros */
+.iconos-nosotros{
+    /* Flexbox solo afecta al primer nivel de las etiquetas hijas (div) */
+    display: flex;
+    /* Deja un espacio intermedio entre dos elementos uno para la izquierda y el otro a la derecha. Alinea verticalmente */
+    justify-content: space-between;
+}
+
+/* Iconos */
+.icono{
+    /* Calcula el total de la pantalla, la divide entre las tres columnas y le resta 10px */
+    flex-basis: calc(33.3% - 1rem);
+    /* Ajusta el texto al centro */
+    text-align: center;
+}
+
+/* Iconos con h3 */
+.icono h3{
+    /*Transforma todas las letras a mayusculas */
+    text-transform: uppercase;
+}
+
+/* Iconocs */
+.icono p{
+    /* Texto justificado */
+    text-align: justify;
+}
+
+/* Anuncios */
+.contenedor-anuncios{
+    /* Flexbox solo afecta al primer nivel de las etiquetas hijas (div) */
+    display: flex;
+    /* Deja un espacio intermedio entre dos elementos uno para la izquierda y el otro a la derecha. Alinea verticalmente */
+    justify-content: space-between;
+    /* Respeta el tamaño que hay en el flex hijo */
+    flex-wrap: wrap;
+}
+
+/* Anuncio */
+.anuncio{
+    /* Para que el contenido crezca */
+    flex-grow: 0;
+    /* Para que el contenido de haga mas pequeño si es posible */
+    flex-shrink: 0;
+    /* Calcula el total de la pantalla, la divide entre las tres columnas y le resta 10px */
+    flex-basis: calc(33.3% - 1rem);
+    /* Borde de 1px solido y gris */
+    border: 1px solid #B5B5B5;
+    /* Color de fondo gris */
+    background-color: #F5F5F5;
+    /* Margen hacia abajo de 20px */
+    margin-bottom: 2rem;
+}
+
+/* Contenido Anuncio */
+.contenido-anuncio{
+    /* Tendra un padding de 20px */
+    padding: 2rem;
+}
+
+/* Contenido de h3 y p */
+.contenido-anuncio h3, .contenido-anuncio p{
+    /* Quitaremos los margenes que tienen por defecto */
+    margin: 0;
+}
+
+/* Precio */
+.precio{
+    /* Color de fuente verde */
+    color: #71B100;
+    /* Forma de fuente 700 */
+    font-weight: 700;
+}
+
+/*Iconos caracteristicas */
+.iconos-caracteristicas{
+    /* Sin estilo */
+    list-style: none;
+    /* Padding 0px */
+    padding: 0;
+    /* Flexbox */
+    display: flex;
+    /* Se alinean los iconos */
+    justify-content: space-evenly;
+    /* Ancho maximo de los iconos 500px */
+    max-width: 50rem;
+    /* Factor de crecimiento */
+    flex: 1;
+}
+
+/* Iconos caracteristicas */
+.iconos-caracteristicas li{
+    /* Flexbox */
+    display: flex;
+}
+
+/* Iconos caracteristicas con li */
+.iconos-caracteristicas li img{
+    /* Margen hacia la derecha 20px */
+    margin-right: 2rem;
+}
+
+/* Font weight h1: 700
+   Font weight p: 400 */
+
+/* Ver todas */
+.ver-todas{
+    /* Flexbox solo afecta al primer nivel de las etiquetas hijas a */
+    display: flex;
+    /* Alinea el contenedor al final del todo */
+    justify-content: flex-end;
+    /* Margin hacia abajo de 30px; */
+    margin-bottom: 3rem;
+}
+
+/* Imagen contanto */
+.imagen-contacto{
+    /* Imagen de fondo */
+    background-image: url(../Imagenes/encuentra.jpg);
+    /* Posiciona la imagen en el centro */
+    background-position: center center;
+    /* Ajusta la imagen en la altura disponible */
+    background-size: cover;
+    /* Altura de la imagen */
+    height: 40rem;
+    /* Felxbox */
+    display: flex;
+    /* Centra el contenido horizontal */
+    align-items: center;
+}
+
+/* Contenido de contacto */
+.contenido-contacto{
+    /* Factor de crecimiento */
+    flex: 1;
+    /* Color blanco */
+    color: #ffffff;
+}
+
+/* Contenido de contacto en p */
+.contenido-contacto p{
+    /* Tamaño de fuente 18px */
+    font-size: 1.8rem;
+}
+
+/* Sección Inferior */
+.seccion-inferior{
+    /* Flexbox */
+    display: flex;
+    /* Alinea verticalmente entre espacios */
+    justify-content: space-between;
+    /* Margen hacia abajo 30px */
+    margin-bottom: 3rem;
+}
+
+/* Sección inferior de blog */
+.seccion-inferior .blog{
+    /* Tomara parte del 60% de su contenedor */
+    flex-basis: 60%;
+}
+
+/*Sección inferior de testimoniales */
+.seccion-inferior .testimoniales{
+    /* Tomara el 40% de su contenedor y le restara 20px */
+    flex-basis: calc(40% - 2rem);
+}
+
+/* Entrada de blog */
+.entrada-blog{
+    /* Flexbox */
+    display: flex;
+    /* Ajusta verticalmente entre espacios */
+    justify-content: space-between;
+    /* Añade un margen de 20px hacia abajo */
+    margin-bottom: 2rem;
+}
+
+/* Entrada de blog al ultimo elemento */
+.entrada-blog:last-of-type{
+    /* Un margen hacia abajo de 0px */
+    margin-bottom: 0;
+}
+
+/* Imagen de la entrada de blog */
+.entrada-blog .imagen{
+    /* Toma el 40% de su espacio en el contenedor */
+    flex-basis: 40%;
+}
+
+/* Texto de la entrada de blog */
+.entrada-blog .texto-entrada{
+    /* Toma el 60% de su espacio y le resta 30px en el contenedor */
+    flex-basis: calc(60% - 3rem);
+}
+
+/* Texto de entrada */
+.texto-entrada a{
+    /* Color de fuente negro */
+    color: #000000;
+    /* Sin decoración de fuente */
+    text-decoration: none;
+}
+
+/* Texto de entrada en h4 */
+.texto-entrada h4{
+    /* Marge 0px */
+    margin: 0;
+    /* Interlineado de 14px */
+    line-height: 1.4;
+}
+
+/* Pseudoelementos */
+/* Texto de entrada DESPUES de h4 */
+.texto-entrada h4::after{
+    /* Contenedor vacio */
+    content: '';
+    /* El display sera un bloque */
+    display: block;
+    /* Anchura de 150px */
+    width: 15rem;
+    /* Altura de 5px */
+    height: .5rem;
+    /* Color de fondo verde */
+    background-color: #71B100;
+    /* Margen hacia arriba de 10px */
+    margin-top: 1rem;
+}
+
+/* Texto de entrada en span */
+.texto-entrada span{
+    /* Color de fuente anaranjado */
+    color: #E08709;
+}
+
+/* Testimoniales */
+.testimonial{
+    /* Color de fondo verde */
+    background-color: #71B100;
+    /* Tamaño de fuente de 24px */
+    font-size: 2.4rem;
+    /* Padding de 20px */
+    padding: 2rem;
+    /* Color de fuente blanco */
+    color: #ffffff;
+    /* Radius de 20px */
+    border-radius: 2rem;
+}
+
+/* Testimoniales en p */
+.testimonial p{
+    /* Ajusta el texto a la derecha */
+    text-align: right;
+    /* Tamaño de fuente 22px */
+    font-size: 2.2rem;
+}
+
+/* Testimoniales ANTES de blockquote */ 
+.testimonial blockquote::before{
+    /* Contenedor vacio */
+    content: '';
+    /* Imagen de fondo */
+    background-image: url(../Imagenes/comilla.svg);
+    /* Ancho de 40px */
+    width: 4rem;
+    /* Altura de 40px */
+    height: 4rem;
+    /* Posición absoluta */
+    position: absolute;
+    /* Alineado ala izquierda a -20px */
+    left: -2rem;
+}
+
+/* Testimoniales en blockquote */
+.testimonial blockquote{
+    /* Posición relativa */
+    position: relative;
+    /* Padding hacia la izquierda a 50px */
+    padding-left: 5rem;
+    /* Forma de la fuente 300 */
+    font-weight: 300;
+}
+
+/* Footer */
+.site-footer{
+    /* Color de fondo gris opaco */
+    background-color: #333333;
+    /* Margen de 0px */
+    margin: 0;
+    /* Elementos alineados verticalmente al centro */
+    align-items: center;
+}
+
+/* Contenedor del footer */
+.contenedor-footer{
+    /* Padding 30px arriba y abajo, 0px izquierda, derecha */
+    padding: 3rem 0;
+    /* Flexbox */
+    display: flex;
+    /* Ajusta verticalmente entre espacios */
+    justify-content: space-between;
+}
+
+/* Copyright */
+.copyright{
+    /* Margen de 0px */
+    margin: 0;
+    /* Color de fuente blanco */
+    color: #ffffff;
+    /* Forma de fuente 300 */
+    font-weight: 300;
+}
+
+/* PAGINAS INTERNAS */
+
+/* Contenido-nosotros */
+.contenido-nosotros{
+    /* grid */
+    display: grid;
+    /* Crea dos columnas de 50% cada una */
+    grid-template-columns: 50% 50%;
+    /* Separación entre ellas 20px */
+    grid-column-gap: 2rem;
+}
+
+/* Texto-nosotros */
+.texto-nosotros blockquote{
+    /* Forma de fuente 900 */
+    font-weight: 900;
+    /* Tamaño de fuente 20px */
+    font-size: 2rem;
+    /* Sin margen */
+    margin: 0;
+    /* Solo padding hacia abajo de 30 px */
+    padding: 0 0 3rem 0;
+}
+
+/* Propiedad */
+.resumen-propiedad{
+    /* Flexbox */
+    display: flex;
+    /* Alinea los objetos en vertical */
+    justify-content: space-between;
+    /* Alinea los objetos en horizontal */
+    align-items: center;
+}
+
+/* Contacto */
+/* Legendas de formulario */
+legend{
+    /* Tamaño de fuente 20px */
+    font-size: 2rem;
+    /* Color de fuente negro claro */
+    color: #4f4f4f;
+}
+
+/* Los parrafos de la clase contacto */
+.contacto p{
+    /* Tamaño de fuente 15px */
+    font-size: 1.5rem;
+    /* Color de fuente negro claro */
+    color: #4f4f4f;
+    /* Margen de 20px hacia arriba */
+    margin: 2rem 0 0 0;
+}
+
+/* Para todos los label */
+label{
+    /* Tipo de letra 700*/
+    font-weight: 700;
+    /* Aplica el texto a mayusculas */
+    text-transform: uppercase;
+    /* Separa cada bloque */
+    display: block;
+}
+
+/* Todos los input que no sean submit + textarea + selects */
+input:not([type="submit"]),
+textarea,
+select{
+    /* Padding 10px */
+    padding: 1rem;
+    /* Bloque */
+    display: block;
+    /* Anchura al 100% */
+    width: 100%;
+    /* Color de fondo gris claro */
+    background-color: #e1e1e1;
+    /* Margen hacia abajo de 20px */
+    margin-bottom: 2rem;
+    /* Sin borde */
+    border: none;
+    /* El borde radius de 10px */
+    border-radius: 1rem;
+}
+
+/* Los input de tipo radio */
+input[type="radio"]{
+    /* Toma el espacio unicamente requerido */
+    width: auto;
+    /* Margen 0px */
+    margin: 0;
+}
+
+/* Select */
+select{
+    /* Para los navegadores aplica los css ingresados */
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Textarea */
+textarea{
+    /* Altura de 200px */
+    height: 20rem;
+}
+
+/* La clase forma-contacto */
+.forma-contacto{
+    /* Ancho maximo de 300px */
+    max-width: 40rem;
+    /* Fllexbox */
+    display: flex;
+    /* Alinea los objetos verticalmente */
+    justify-content: space-between;
+    /* Alinea los objetos horizontalmente */
+    align-items: center;
+}
+
